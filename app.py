@@ -28,7 +28,7 @@ personalities = {
         Add subtle humor.
         Answer in 2-6 sentences.
         """,
-        "image": "Issac_Newton.jpg"
+        "image": "Assets/Issac_Newton.jpg"
     },
 
     "Albert Einstein": {
@@ -38,7 +38,7 @@ personalities = {
         Be insightful and slightly playful.
         Answer in 2-6 sentences.
         """,
-        "image": "Albert_Einstein2.jpg"
+        "image": "Assets/Albert_Einstein2.jpg"
     },
 
     "Blume AI": {
@@ -47,7 +47,7 @@ personalities = {
         Be clear, concise and practical.
         Answer in 2-6 sentences.
         """,
-        "image": "Blume_Logo.jpg"
+        "image": "Assets/Blume_Logo.jpg"
     }
 }
 
