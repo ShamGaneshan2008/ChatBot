@@ -88,7 +88,8 @@ Then open:
 http://localhost:7860
 
 📸 Demo
-<img src="screenshot.png" width="800">
+
+![Chatbot Screenshot](https://github.com/ShamGaneshan2008/ChatBot/blob/8ff865ccbdf7188fe3d33bd702d25f6d5f2121a5/Screenshots.png/Screenshot%202026-02-23%20132217.png)
 🔐 Security Practices
 
 API keys stored securely using environment variables
