@@ -8,29 +8,25 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.messages import HumanMessage, AIMessage
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 
-# ------------------------------
+
 # Load API Key
-# ------------------------------
 load_dotenv()
 gem_key = os.getenv("GEMINI_API_KEY")
 
 if not gem_key:
     raise ValueError("GEMINI_API_KEY not found in .env file")
 
-# ------------------------------
+
 # Flask App
-# ------------------------------
 app = Flask(__name__, static_folder=".")
 CORS(app)  # allows the HTML file to talk to Flask
 
-# ------------------------------
+
 # In-Memory User Store
-# ------------------------------
 registered_users = {}
 
-# ------------------------------
+
 # Personalities
-# ------------------------------
 personalities = {
     "newton": """
         You are Isaac Newton.
@@ -52,16 +48,14 @@ personalities = {
     """
 }
 
-# ------------------------------
+
 # Serve UI.html at root
-# ------------------------------
 @app.route("/")
 def index():
     return send_from_directory(".", "UI.html")
 
-# ------------------------------
+
 # Signup Route
-# ------------------------------
 @app.route("/signup", methods=["POST"])
 def signup():
     data = request.json
@@ -81,9 +75,8 @@ def signup():
     registered_users[email] = password
     return jsonify({"success": True, "message": "Account created! Please sign in."})
 
-# ------------------------------
+
 # Login Route
-# ------------------------------
 @app.route("/login", methods=["POST"])
 def login():
     data     = request.json
@@ -99,9 +92,8 @@ def login():
 
     return jsonify({"success": True, "message": f"Welcome, {email}!"})
 
-# ------------------------------
+
 # Chat Route
-# ------------------------------
 @app.route("/chat", methods=["POST"])
 def chat():
     data       = request.json
@@ -148,9 +140,7 @@ def chat():
     except Exception as e:
         return jsonify({"success": False, "message": f"Error: {str(e)}"})
 
-# ------------------------------
 # Run Server
-# ------------------------------
 if __name__ == "__main__":
     print("=" * 40)
     print("  Blume AI Server running!")
